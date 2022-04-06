@@ -1,0 +1,27 @@
+﻿<h1> tela de login </h1>
+
+<form method="post" action="/Login/Entrar">
+    Usuário<input type="text" name="usuario" />
+    <br />
+    Senha<input type="password" name="senha" />
+    <br />
+    <button type="submit">Logar</button>
+
+</form>
+<br />
+@if (TempData["erro"] != null)
+{
+    <h1>@TempData["erro"]</h1>
+}
+
+@{
+    var claimsIdentity = User.Identity as System.Security.Claims.ClaimsIdentity;
+    var Nome = "";
+    if (claimsIdentity != null)
+    {
+        Nome = claimsIdentity.FindFirst(System.Security.Claims.ClaimTypes.Name).Value;
+    }
+
+}
+
+<h1>@Nome</h1>

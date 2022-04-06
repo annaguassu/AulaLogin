@@ -23,6 +23,13 @@ namespace Login
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+            services.AddAuthentication("Autenticacao")
+                .AddCookie("Autenticacao", option =>
+                {
+                    option.LoginPath = "/Login/Entrar";
+                    option.AccessDeniedPath = "/Login/ops";
+                }
+                );
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

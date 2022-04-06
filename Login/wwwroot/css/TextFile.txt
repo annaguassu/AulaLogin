@@ -70,7 +70,7 @@
 
 
 
-                     public async Task<IActionResult> Logoff()
+        public async Task<IActionResult> Logoff()
         {
             await HttpContext.SignOutAsync("CookieAuthentication");
             ViewData["ReturnUrl"] = "/";
