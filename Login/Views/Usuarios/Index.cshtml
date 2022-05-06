@@ -1,10 +1,13 @@
-﻿@model IEnumerable<Login.Models.UsuariosModel>
+﻿@model IEnumerable<Login.Entidades.Usuario>
 
 @{
     ViewData["Title"] = "Index";
 }
 
 
+<p>
+    <a asp-action="Create">Novo Usuário</a>
+</p>
 <table class="table">
     <thead>
         <tr>
@@ -39,7 +42,7 @@
                 @Html.DisplayFor(modelItem => item.Senha)
             </td>
             <td>
-               
+                
             </td>
         </tr>
 }

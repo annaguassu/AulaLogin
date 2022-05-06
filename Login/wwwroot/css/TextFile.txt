@@ -17,7 +17,7 @@
 
             using Microsoft.AspNetCore.Authorization;
 
-            [authorize]
+            [authorize(AuthenticationSchemes ="CookieAuthentication")]
 
 
 
