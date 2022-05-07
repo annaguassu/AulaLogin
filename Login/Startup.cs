@@ -25,6 +25,11 @@ namespace Login
         {
             services.AddControllersWithViews();
             services.AddDbContext<Contexto>(a => a.UseSqlServer("Server=c3po;Database=LoginFilmesFavoritos;Trusted_Connection=True;"));
+            services.AddAuthentication("CookieAuthentication").AddCookie("CookieAuthentication", options =>
+            {
+                options.AccessDeniedPath = "/Login/Ops/";
+                options.LoginPath = "/Login/Entrar/";
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
